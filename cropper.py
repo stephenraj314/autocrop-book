@@ -62,7 +62,7 @@ def autocrop_images():
     for file in orig_files:
         input_path = os.path.join(root_dir,"output","original",file)
         output_path = os.path.join(root_dir,"output","cropped",file)
-        command=["python","ndl-crop/ndl-crop.py","-r",input_path,"-o",output_path]
+        command=["python","src/crop-pages/ndl-crop.py","-r",input_path,"-o",output_path]
         try:
             subprocess.run(command, check=True, timeout=60)
         except FileNotFoundError as e:

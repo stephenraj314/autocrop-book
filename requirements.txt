@@ -1,0 +1,4 @@
+argh==0.26.2
+numpy==1.22.4
+opencv-python==4.6.0.66
+-e git+https://github.com/stephenraj314/crop-pages.git@page-crop#egg=ndl-crop
