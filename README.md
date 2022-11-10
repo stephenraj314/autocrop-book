@@ -16,4 +16,8 @@
 
 > Usage
 
-``
+`python cropper.py --input <pdf - file>`
+
+or 
+
+`python cropper.py --input <pdf - file>`

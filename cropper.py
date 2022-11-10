@@ -35,7 +35,7 @@ def convert_to_pdf():
     org_files = [f"({x}) viewJPEG showpage" for x in os.listdir() if x.endswith(".jpg")]
     # using Ghostscript to convert image directory in pdf
     command=["gs","-q ","-dNOSAFER","-sPAPERSIZE=letter","-dNOPAUSE","-dBATCH",
-    "-sDEVICE=pdfwrite",f"-sOutputFile={root_dir}/output2.pdf","viewjpeg.ps","-c"]
+    "-sDEVICE=pdfwrite",f"-sOutputFile={root_dir}/output.pdf","viewjpeg.ps","-c"]
     command = command + org_files
 
     try:
@@ -62,7 +62,7 @@ def autocrop_images():
     for file in orig_files:
         input_path = os.path.join(root_dir,"output","original",file)
         output_path = os.path.join(root_dir,"output","cropped",file)
-        command=["python","src/crop-pages/ndl-crop.py","-r",input_path,"-o",output_path]
+        command=["python","src/ndl-crop/ndl-crop/ndl-crop.py","-r",input_path,"-o",output_path]
         try:
             subprocess.run(command, check=True, timeout=60)
         except FileNotFoundError as e:
