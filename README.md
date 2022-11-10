@@ -20,4 +20,4 @@
 
 or 
 
-`python cropper.py --input <pdf - file>`
+`python3 cropper.py --input <pdf - file>`
